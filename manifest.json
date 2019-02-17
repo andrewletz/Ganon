@@ -1,0 +1,6 @@
+{ 
+	"name": "Ganon",
+	"version": "1.0",
+	"description": "Ganon is an extension aimed to combat phishing and improve general internet security by scanning links to ensure that they are reputable.",
+	"manifest_version": 1
+}
