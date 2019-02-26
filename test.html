@@ -1,0 +1,23 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h3>This is a test</h3>
+<a href="#">test</a>
+</div>
+
+<script>
+$(document).ready(function(){
+	var links = document.getElementsByTagName("a");
+	for (i=0;i<links.length;i++) {
+		links[i].title = links[i].href;
+		$(links[i]).tooltip();
+	}
+});
+</script>
+
+</body>
+</html>
