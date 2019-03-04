@@ -7,13 +7,21 @@
 <body>
 <h3>This is a test</h3>
 <a href="#">test</a>
+<a href="aeå">test</a>
 </div>
 
 <script>
 $(document).ready(function(){
 	var links = document.getElementsByTagName("a");
 	for (i=0;i<links.length;i++) {
-		links[i].title = links[i].href;
+		links[i].title = "safe";
+		console.log(links[i].href);
+		for(j=0; j < links[i].href.length; j++){
+			if(links[i].href[j] == "%"){
+				links[i].title = "unsafe";
+				break;
+			}
+		}
 		$(links[i]).tooltip();
 	}
 });
