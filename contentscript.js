@@ -19,6 +19,7 @@ $(document).ready(function(){
 		} else {
 			safe_text += ", external";
 			unsafe_text += ", external";
+			links[i].title = safe_text;
 		}	
 		
 		// Check for international characters
