@@ -22,6 +22,9 @@ $(document).ready(function(){
                         }
                 }
 
+		console.log(target_domain)
+		console.log(domain)
+
                 $(links[i]).tooltip();
         }
 });
