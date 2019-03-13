@@ -3,7 +3,7 @@ $(document).ready(function(){
         for (i=0;i<links.length;i++) {
                 links[i].title = "safe";
 
-		target_domain = links[i].href.split("https://").pop().split("http://").pop().match(/[^\/]*\//)
+		target_domain = links[i].href.split("https://").pop().split("http://").pop().match(/[^\/]*\//);
 		domain = window.location.hostname;
 
 		// Check for international characters
@@ -16,14 +16,14 @@ $(document).ready(function(){
 				
 		// Checks for percent encoding
                 for(j=0; j < target_domain.length; j++){
-                        if(target_domain.href[j] == "%"){
+                        if(target_domain[j] == "%"){
                                 links[i].title = "unsafe";
                                 break;
                         }
                 }
 
-		console.log(target_domain)
-		console.log(domain)
+		console.log(target_domain);
+		console.log(domain);
 
                 $(links[i]).tooltip();
         }
