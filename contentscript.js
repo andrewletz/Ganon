@@ -8,7 +8,7 @@ $(document).ready(function(){
 			target_domain = links[i].href.split("https://").pop().split("http://").pop().match(/[^\/]*\//)[0];
 			target_domain = target_domain.substring(0, target_domain.length - 1);
 		} catch(err) {
-			console.log("You done fucked");
+			console.log("An error occured");
 		}
 
 		domain = window.location.hostname;
