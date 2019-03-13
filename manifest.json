@@ -4,14 +4,10 @@
     "description": "Ganon is an extension aimed to combat phishing and improve general internet security by scanning links to ensure that they are reputable.",
     "permissions": ["activeTab", "declarativeContent", "storage"],
     "options_page": "options.html",
-    "background": {
-      "scripts": ["background.js"],
-      "persistent": false
-    },
     "content_scripts": [
       {
         "matches": ["<all_urls>"],
-        "js": ["contentscript.js"]
+        "js": ["jquery.min.js", "bootstrap.min.js", "contentscript.js"]
       }
     ],
     "page_action": {
