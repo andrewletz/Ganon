@@ -1,7 +1,8 @@
 $(document).ready(function(){
         var links = document.getElementsByTagName("a");
         for (i=0;i<links.length;i++) {
-                links[i].title = "safe";
+		safe_text = "SAFE"
+		unsafe_text = "UNSAFE"
 
 		try {
 			target_domain = links[i].href.split("https://").pop().split("http://").pop().match(/[^\/]*\//)[0];
@@ -11,11 +12,20 @@ $(document).ready(function(){
 		}
 
 		domain = window.location.hostname;
+
+		if(target_domain == domain){
+			safe_text += ", internal";
+			links[i].title = safe_text;
+		} else {
+			safe_text += ", external";
+			unsafe_text += ", external";
+		}	
 		
 		// Check for international characters
 		for(j=0; j < target_domain.length; j++){
 			if(target_domain[j] > '\u007E'){
-                                links[i].title = "unsafe";
+                                unsafe_text += ", international characters";
+				links[i].title = unsafe_text;
                                 break;
 			}
 		}
@@ -23,15 +33,12 @@ $(document).ready(function(){
 		// Checks for percent encoding
                 for(j=0; j < target_domain.length; j++){
                        if(target_domain[j] == "%"){
-                                links[i].title = "unsafe";
+                                unsafe_text += ", percent encoding";
+				links[i].title = unsafe_text;
                                 break;
                         }
                 }
 		
-		if(target_domain != domain){
-			links[i].title = "unsafe";
-		}
-
                 $(links[i]).tooltip();
         }
 });
