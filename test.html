@@ -1,31 +1,11 @@
 <html>
 <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<title>This is a test</test>
 </head>
 <body>
 <h3>This is a test</h3>
 <a href="#">test</a>
 <a href="aeå">test</a>
 </div>
-
-<script>
-$(document).ready(function(){
-	var links = document.getElementsByTagName("a");
-	for (i=0;i<links.length;i++) {
-		links[i].title = "safe";
-		console.log(links[i].href);
-		for(j=0; j < links[i].href.length; j++){
-			if(links[i].href[j] == "%"){
-				links[i].title = "unsafe";
-				break;
-			}
-		}
-		$(links[i]).tooltip();
-	}
-});
-</script>
-
 </body>
 </html>
