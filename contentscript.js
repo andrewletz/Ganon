@@ -26,7 +26,5 @@ $(document).ready(function(){
 		console.log(domain);
 
                 $(links[i]).tooltip();
-		
-		links[i].href="https://downloadmoreram.com/"
         }
 });
