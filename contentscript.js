@@ -7,16 +7,16 @@ $(document).ready(function(){
 		domain = window.location.hostname;
 
 		// Check for international characters
-		for(j=0; j < links[i].href.length; j++){
-			if(links[i].href[j] > '\u007E'){
+		for(j=0; j < target_domain.length; j++){
+			if(target_domain[j] > '\u007E'){
                                 links[i].title = "unsafe";
                                 break;
 			}
 		}
 				
 		// Checks for percent encoding
-                for(j=0; j < links[i].href.length; j++){
-                        if(links[i].href[j] == "%"){
+                for(j=0; j < target_domain.length; j++){
+                        if(target_domain.href[j] == "%"){
                                 links[i].title = "unsafe";
                                 break;
                         }
